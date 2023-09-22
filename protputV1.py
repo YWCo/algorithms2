@@ -27,7 +27,7 @@ hide_streamlit_style = """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 st.markdown("<h1 style='text-align: center; color: black;'>Protective Put Algorithm</h1>", unsafe_allow_html=True)
-#@st.cache_data
+@st.cache_data
 def calculate_strike_params_call(_p, symbol, spot, start_dummy, stop_dummy, exp,strike_params_table_empty,max_pain):
     #cols = ['Strike', 'Volume', 'Open_Interest', 'Implied_Volatility', 'BSM_Price', 'Max_Pain', 'Delta', 'Gamma', 'Vega', 'Theta', 'Rho']
     #strike_params_table = pd.DataFrame(columns=cols)
@@ -248,7 +248,7 @@ if st.button("Get parameters table for each strike price"):
     start_dummy=int(len(p.strikes)/2-5)
     stop_dummy=int(len(p.strikes)/2+5)
     n=start_dummy
-    dfr_put=calculate_strike_params_call(p, symbol, spot, start_dummy, stop_dummy, str(exp),strike_params_table_empty,max_pain)
+    dfr_put=calculate_strike_params_call(_p, symbol, spot, start_dummy, stop_dummy, str(exp),strike_params_table_empty,max_pain)
     st.dataframe(dfr_put)
 
 
