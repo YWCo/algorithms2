@@ -1,0 +1,9 @@
+pandas
+numpy
+yfinance
+matplotlib
+wallstreet
+datetime
+option-price
+plotly-express
+opstrat
