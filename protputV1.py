@@ -245,8 +245,8 @@ max_pain = flat_strikes[point]
 
 
 if st.button("Get parameters table for each strike price"):
-    start_dummy=int(len(p.strikes)/2-5)
-    stop_dummy=int(len(p.strikes)/2+5)
+    start_dummy=int(len(p.strikes)*0.2)
+    stop_dummy=int(len(p.strikes)*0.8)
     n=start_dummy
     dfr_put=calculate_strike_params_call(_p, symbol, spot, start_dummy, stop_dummy, str(exp),strike_params_table_empty,max_pain)
     st.dataframe(dfr_put)
